@@ -19,7 +19,7 @@ public class ToolServiceTest {
     @Mock
     private ToolRepository repository;
 
-    private ToolServiceImpl service;
+    private ToolService service;
 
     @BeforeEach
     void setUp() {

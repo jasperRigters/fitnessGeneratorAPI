@@ -17,7 +17,31 @@ public class ExerciseMuscle {
     @JoinColumn(name = "muscle_id")
     private Muscle muscle;
 
-    private int load;
+    private Integer load;
 
     // getters and setters
+
+    public Exercise getExercise() {
+        return exercise;
+    }
+
+    public void setExercise(Exercise exercise) {
+        this.exercise = exercise;
+    }
+
+    public Muscle getMuscle() {
+        return muscle;
+    }
+
+    public void setMuscle(Muscle muscle) {
+        this.muscle = muscle;
+    }
+
+    public int getLoad() {
+        return load;
+    }
+
+    public void setLoad(int load) {
+        this.load = load;
+    }
 }

@@ -6,6 +6,8 @@ import fitness.generator.API.services.ExerciseService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class ExerciseServiceImpl implements ExerciseService {
 
@@ -19,5 +21,9 @@ public class ExerciseServiceImpl implements ExerciseService {
         return exerciseRepository.save(exercise);
     }
 
+    @Override
+    public List<Exercise> findAllExercises() {
+        return exerciseRepository.findAll();
+    }
 
 }

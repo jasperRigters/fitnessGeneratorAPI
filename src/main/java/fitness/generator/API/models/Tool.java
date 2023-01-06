@@ -13,8 +13,8 @@ public class Tool {
 
     private String name;
 
-    @ManyToMany(mappedBy = "tools")
-    private Set<Exercise> exercises;
+    @OneToMany(mappedBy = "tool")
+    private Set<ExerciseTool> exercises;
 
     public Long getId() {
         return id;
@@ -28,7 +28,7 @@ public class Tool {
         this.name = name;
     }
 
-    public Set<Exercise> getExercises() {
+    public Set<ExerciseTool> getExercises() {
         return exercises;
     }
 }

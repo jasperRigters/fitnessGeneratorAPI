@@ -12,7 +12,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 @AutoConfigureTestDatabase(replace = AutoConfigureTestDatabase.Replace.NONE)
 public class ToolRepositoryTest {
 
-       @Autowired
+    @Autowired
     private ToolRepository repository;
 
     @Test

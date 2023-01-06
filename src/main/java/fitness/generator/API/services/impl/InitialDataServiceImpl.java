@@ -35,6 +35,4 @@ public class InitialDataServiceImpl implements InitialDataService {
 
        return initialDataDto;
     }
-
-
 }

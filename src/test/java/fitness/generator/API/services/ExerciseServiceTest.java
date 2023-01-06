@@ -1,4 +1,4 @@
-package fitness.generator.API.models;
+package fitness.generator.API.services;
 
 import fitness.generator.API.repositories.ExerciseRepository;
 import fitness.generator.API.services.impl.ExerciseServiceImpl;
@@ -10,8 +10,7 @@ import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
 
 @DataJpaTest
 @ExtendWith(MockitoExtension.class)
-public class ExerciseTest {
-
+public class ExerciseServiceTest {
     @Mock
     private ExerciseRepository repository;
 

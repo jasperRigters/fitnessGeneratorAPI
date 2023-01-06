@@ -2,7 +2,6 @@ package fitness.generator.API.models;
 
 import jakarta.persistence.*;
 
-import java.util.List;
 import java.util.Set;
 
 @Table(name = "exercises")
@@ -14,20 +13,17 @@ public class Exercise {
 
     private String name;
 
+    private String instructions;
+
     @OneToMany(mappedBy = "exercise", cascade = CascadeType.ALL)
-    private List<ExerciseMuscle> exerciseMuscles;
+    private Set<ExerciseMuscle> exerciseMuscles;
 
     @ManyToOne
     @JoinColumn(name = "user_id")
     private User user;
 
-    @ManyToMany(cascade = {CascadeType.ALL})
-    @JoinTable(
-            name = "exercise_tool",
-            joinColumns = {@JoinColumn(name = "exercise_id")},
-            inverseJoinColumns = {@JoinColumn(name = "tool_id")}
-    )
-    private Set<Tool> tools;
+    @OneToMany(mappedBy = "exercise", cascade = CascadeType.ALL)
+    private Set<ExerciseTool> tools;
 
     // getters and setters
 
@@ -48,11 +44,19 @@ public class Exercise {
         this.name = name;
     }
 
-    public List<ExerciseMuscle> getExerciseMuscles() {
+    public String getInstructions() {
+        return instructions;
+    }
+
+    public void setInstructions(String instructions) {
+        this.instructions = instructions;
+    }
+
+    public Set<ExerciseMuscle> getExerciseMuscles() {
         return exerciseMuscles;
     }
 
-    public void setExerciseMuscles(List<ExerciseMuscle> exerciseMuscles) {
+    public void setExerciseMuscles(Set<ExerciseMuscle> exerciseMuscles) {
         this.exerciseMuscles = exerciseMuscles;
     }
 
@@ -64,11 +68,11 @@ public class Exercise {
         this.user = user;
     }
 
-    public Set<Tool> getTools() {
+    public Set<ExerciseTool> getTools() {
         return tools;
     }
 
-    public void setTools(Set<Tool> tools) {
+    public void setTools(Set<ExerciseTool> tools) {
         this.tools = tools;
     }
 }
